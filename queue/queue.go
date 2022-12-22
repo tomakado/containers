@@ -1,8 +1,9 @@
 package queue
 
 type Queue[T comparable] struct {
-	head *node[T]
-	tail *node[T]
+	head   *node[T]
+	tail   *node[T]
+	length int
 }
 
 func New[T comparable](items ...T) *Queue[T] {
@@ -16,6 +17,7 @@ func New[T comparable](items ...T) *Queue[T] {
 func (q *Queue[T]) Clear() {
 	q.head = nil
 	q.tail = nil
+	q.length = 0
 }
 
 func (q *Queue[T]) Contains(item T) bool {
@@ -35,12 +37,14 @@ func (q *Queue[T]) Dequeue() (T, bool) {
 	}
 	next := q.head.next
 	q.head = next
+	q.length--
 
 	return n.value, true
 }
 
 func (q *Queue[T]) Enqueue(item T) {
 	n := &node[T]{value: item}
+	q.length++
 	if q.head == nil {
 		q.head = n
 		q.tail = q.head
@@ -56,6 +60,19 @@ func (q *Queue[T]) Peek() (T, bool) {
 		return node[T]{}.value, false
 	}
 	return n.value, true
+}
+
+func (q *Queue[T]) Len() int {
+	return q.length
+}
+
+func (q *Queue[T]) Slice() []T {
+	slice := make([]T, 0, q.Len())
+	for q.Len() > 0 {
+		item, _ := q.Dequeue()
+		slice = append(slice, item)
+	}
+	return slice
 }
 
 type node[T comparable] struct {
