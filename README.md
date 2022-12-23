@@ -4,9 +4,11 @@ Collection of simple generic data structures currently missing in Go's standard 
 
 # Data structures
 
-* Hash set (done)
-* List (done)
-* Queue (done)
-* Heap
+* Set 
+	* Unordered (hash set)
+	* [TODO] Ordered
+* List 
+* Queue 
 * Stack
-* Tree?
+* [TODO] Heap
+* [TODO] Tree?
