@@ -10,7 +10,7 @@ import (
 func TestList(t *testing.T) {
 	t.Run("single element list", func(t *testing.T) {
 		var (
-			list = list.NewList[string]()
+			list = list.New[string]()
 			e    = list.PushBack("foo")
 		)
 
@@ -32,7 +32,7 @@ func TestList(t *testing.T) {
 
 	t.Run("bigger list", func(t *testing.T) {
 		var (
-			list = list.NewList[int]()
+			list = list.New[int]()
 			e1   = list.PushBack(2)
 			e2   = list.PushBack(1)
 			e3   = list.PushBack(1)
@@ -60,7 +60,7 @@ func TestList(t *testing.T) {
 
 	t.Run("iteration", func(t *testing.T) {
 		var (
-			list = list.NewList[int]()
+			list = list.New[int]()
 		)
 
 		list.PushBack(1)
@@ -83,7 +83,7 @@ func TestList(t *testing.T) {
 
 	t.Run("clear all elements by iterating", func(t *testing.T) {
 		var (
-			list = list.NewList[int]()
+			list = list.New[int]()
 		)
 
 		list.PushBack(1)
@@ -100,9 +100,9 @@ func TestList(t *testing.T) {
 
 	t.Run("extend", func(t *testing.T) {
 		var (
-			l1 = list.NewList[int]()
-			l2 = list.NewList[int]()
-			l3 = list.NewList[int]()
+			l1 = list.New[int]()
+			l2 = list.New[int]()
+			l3 = list.New[int]()
 		)
 
 		l1.PushBack(1)
@@ -118,7 +118,7 @@ func TestList(t *testing.T) {
 		l3.PushBackList(l2)
 		assert.Equal(t, 5, l3.Len())
 
-		l3 = list.NewList[int]()
+		l3 = list.New[int]()
 		l3.PushFrontList(l1)
 		assert.Equal(t, 3, l3.Len())
 
@@ -128,7 +128,7 @@ func TestList(t *testing.T) {
 
 	t.Run("remove", func(t *testing.T) {
 		var (
-			list = list.NewList[int]()
+			list = list.New[int]()
 			e1   = list.PushBack(1)
 			e2   = list.PushBack(2)
 		)
@@ -144,7 +144,7 @@ func TestList(t *testing.T) {
 
 	t.Run("move", func(t *testing.T) {
 		var (
-			list = list.NewList[int]()
+			list = list.New[int]()
 			e1   = list.PushBack(1)
 			e2   = list.PushBack(2)
 		)
@@ -172,7 +172,7 @@ func TestList(t *testing.T) {
 
 	t.Run("zero list", func(t *testing.T) {
 		var (
-			list = list.NewList[int]()
+			list = list.New[int]()
 		)
 
 		assert.Equal(t, 0, list.Len())
