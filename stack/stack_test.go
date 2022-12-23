@@ -26,13 +26,13 @@ func TestStack(t *testing.T) {
 	})
 
 	t.Run("Peek empty stack", func(t *testing.T) {
-			var (
-				s       = stack.New[int](10)
-				val, ok = s.Peek()
-			)
+		var (
+			s       = stack.New[int](10)
+			val, ok = s.Peek()
+		)
 
-			assert.False(t, ok, "Expected Pop to return false")
-			assert.Equal(t, 0, val, "Expected 0 to be popped off the stack")
+		assert.False(t, ok, "Expected Pop to return false")
+		assert.Equal(t, 0, val, "Expected 0 to be popped off the stack")
 	})
 
 	t.Run("Len", func(t *testing.T) {
