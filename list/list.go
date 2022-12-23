@@ -36,8 +36,8 @@ type List[T any] struct {
 	len  int
 }
 
-// NewList returns an initialized list.
-func NewList[T any]() *List[T] {
+// New returns an initialized list.
+func New[T any]() *List[T] {
 	return new(List[T]).Init()
 }
 

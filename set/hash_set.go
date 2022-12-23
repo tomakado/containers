@@ -9,7 +9,7 @@ package set
 //	}
 type HashSet[T comparable] map[T]struct{}
 
-func NewHashSet[T comparable](elements ...T) HashSet[T] {
+func New[T comparable](elements ...T) HashSet[T] {
 	s := HashSet[T]{}
 
 	for _, e := range elements {
