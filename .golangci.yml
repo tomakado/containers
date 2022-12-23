@@ -1,0 +1,66 @@
+# This file contains all available configuration options for this project.
+
+# options for analysis running
+run:
+  # timeout for analysis, e.g. 30s, 5m, default is 1m
+  timeout: 3m
+  gofmt:
+    # simplify code: gofmt with `-s` option, true by default
+    simplify: true
+  revive:
+    rules:
+      - name: line-length-limit
+        arguments: 120
+  gofumports:
+    local-prefixes: "github.com/tomakado/containers"
+
+output:
+  sort-results: true
+
+issues:
+  exclude-use-default: true
+  fix: false
+  exclude-rules:
+    - linters:
+        - revive
+      source: '^// \d+(\.\d+)*\.'
+
+    - linters:
+        - revive
+      text: 'should not use basic type string as key in context.WithValue'
+
+    - linters:
+        - revive
+      text: "don't use an underscore in package name"
+
+    - linters:
+        - staticcheck
+      text: 'SA1029:' # the same as revive's rule about string as a key in context.WithValue
+
+    - linters:
+        - revive
+      text: "comment on exported var"
+
+    - linters:
+        - revive
+      text: var-naming
+
+    - linters:
+        - revive
+      text: dot-imports
+
+linters:
+  enable:
+    - revive
+    - gofmt
+    - gosimple
+    - misspell
+    - goimports
+    - godot
+    - cyclop
+    - gocognit
+    - gocritic
+    - prealloc
+    - wsl
+    - goconst
+
