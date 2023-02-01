@@ -11,11 +11,6 @@ type Node[K, V constraints.Ordered] struct {
 }
 
 func (n *Node[K, V]) Append(node *Node[K, V]) {
-	if n == nil {
-		n = node //nolint:staticcheck
-		return
-	}
-
 	if node.Value < n.Value {
 		if n.Left == nil {
 			n.Left = node
