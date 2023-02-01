@@ -11,4 +11,6 @@ Collection of simple generic data structures currently missing in Go's standard 
 * Queue 
 * Stack
 * [TODO] Heap
-* [TODO] Tree?
+* Tree
+	* N-ary tree
+	* Binary tree
