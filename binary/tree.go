@@ -11,7 +11,7 @@ type Node[K, V constraints.Ordered] struct {
 }
 
 func (n *Node[K, V]) Append(node *Node[K, V]) {
-	if node.Value < n.Value {
+	if node.Key < n.Key {
 		if n.Left == nil {
 			n.Left = node
 			return
