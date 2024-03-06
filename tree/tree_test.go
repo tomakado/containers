@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/tomakado/containers/tree"
+	"go.tomakado.io/containers/tree"
 )
 
 func TestAppend(t *testing.T) {

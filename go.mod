@@ -1,4 +1,4 @@
-module github.com/tomakado/containers
+module go.tomakado.io/containers
 
 go 1.19
 

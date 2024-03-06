@@ -1,6 +1,6 @@
 package tree
 
-import "github.com/tomakado/containers/queue"
+import "go.tomakado.io/containers/queue"
 
 // Node is a node of N-ary tree.
 // Implementation is based on code by Ilija Eftimov (URL: https://ieftimov.com/posts/golang-datastructures-trees/).
