@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/tomakado/containers/stack"
+	"go.tomakado.io/containers/stack"
 )
 
 func TestStack(t *testing.T) {
